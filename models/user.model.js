@@ -4,24 +4,24 @@ const validator = require('validator');
 const userSchema = new mongoose.Schema({
 	username: {
 		type: String,
-		require: [true, 'username name is compulsary'],
+		required: [true, 'username name is compulsary'],
 		minlength: [4, 'username must be atleast 4 characters'],
 		unique: [true, 'user already exist with this name'],
 	},
 	email: {
 		type: String,
-		require: [true, 'A user must have an email'],
+		required: [true, 'A user must have an email'],
 		unique: [true, 'User already exist with this email'],
 		validate: [validator.isEmail, 'Invalid email provided'],
 	},
 	password: {
 		type: String,
-		require: [true, 'user must provide a password'],
+		required: [true, 'user must provide a password'],
 		minlength: [8, 'password must be atleast 8 characters'],
 	},
 	confirmPassword: {
 		type: String,
-		require: [true, 'must provide password confirmation'],
+		required: [true, 'must provide password confirmation'],
 		validate: {
 			validator: function (val) {
 				return val === this.password;
@@ -33,3 +33,4 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+module.exports = User;

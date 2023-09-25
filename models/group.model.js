@@ -12,6 +12,8 @@ const groupSchema = new mongoose.Schema({
 		required: [true, 'A group must be created by a user'],
 	},
 	photo: String,
+	description: String,
 });
 
 const Group = mongoose.model('Group', groupSchema);
+module.exports = Group;
