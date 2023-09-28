@@ -1,0 +1,92 @@
+[
+	{
+		"name": "Nature Explorers",
+		"admin": "6151acf5c8bc1c001fd8c6e1",
+		"photo": "nature.jpg",
+		"description": "A group for exploring and appreciating nature."
+	},
+	{
+		"name": "Book Club",
+		"admin": "6151acf5c8bc1c001fd8c6e3",
+		"photo": "book-club.jpg",
+		"description": "A group for discussing and sharing books."
+	},
+	{
+		"name": "Fitness Enthusiasts",
+		"admin": "6151acf5c8bc1c001fd8c6e8",
+		"photo": "fitness.jpg",
+		"description": "A group dedicated to fitness and healthy living."
+	},
+	{
+		"name": "Cooking Lovers",
+		"admin": "6151acf5c8bc1c001fd8c6e4",
+		"photo": "cooking.jpg",
+		"description": "A group for sharing recipes and cooking tips."
+	},
+	{
+		"name": "Photography Club",
+		"admin": "6151acf5c8bc1c001fd8c6e6",
+		"photo": "photography.jpg",
+		"description": "A group for photography enthusiasts to share their work."
+	},
+	{
+		"name": "Tech Geeks",
+		"admin": "6151acf5c8bc1c001fd8c6e2",
+		"photo": "tech.jpg",
+		"description": "A group for discussing the latest technology trends."
+	},
+	{
+		"name": "Artists United",
+		"admin": "6151acf5c8bc1c001fd8c6e7",
+		"photo": "artists.jpg",
+		"description": "A group for artists to connect and collaborate."
+	},
+	{
+		"name": "Travel Explorers",
+		"admin": "6151acf5c8bc1c001fd8c6e5",
+		"photo": "travel.jpg",
+		"description": "A group for sharing travel experiences and tips."
+	},
+	{
+		"name": "Music Lovers",
+		"admin": "6151acf5c8bc1c001fd8c6e9",
+		"photo": "music.jpg",
+		"description": "A group for discussing and sharing music."
+	},
+	{
+		"name": "Movie Buffs",
+		"admin": "6151acf5c8bc1c001fd8c6e2",
+		"photo": "movies.jpg",
+		"description": "A group for movie enthusiasts to discuss films."
+	},
+	{
+		"name": "Tech Enthusiasts",
+		"admin": "6151acf5c8bc1c001fd8c6e1",
+		"photo": "tech_enthusiasts.jpg",
+		"description": "A group for passionate tech enthusiasts to discuss the latest trends and innovations."
+	},
+	{
+		"name": "Fitness Junkies",
+		"admin": "6151acf5c8bc1c001fd8c6e3",
+		"photo": "fitness_junkies.png",
+		"description": "Join this group if you're dedicated to maintaining a healthy and active lifestyle."
+	},
+	{
+		"name": "Bookworms United",
+		"admin": "6151acf5c8bc1c001fd8c6e4",
+		"photo": "bookworms_united.jpg",
+		"description": "A group for avid readers to share their favorite books and engage in literary discussions."
+	},
+	{
+		"name": "Travel Explorers",
+		"admin": "6151acf5c8bc1c001fd8c6e3",
+		"photo": "travel_explorers.jpeg",
+		"description": "Discover the world with fellow travel enthusiasts and exchange tips and recommendations."
+	},
+	{
+		"name": "Art Lovers Society",
+		"admin": "6151acf5c8bc1c001fd8c6e1",
+		"photo": "art_lovers_society.png",
+		"description": "Connect with artists and art enthusiasts in this group dedicated to all forms of artistic expression."
+	}
+]
