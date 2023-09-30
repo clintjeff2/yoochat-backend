@@ -39,8 +39,8 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		default: 'user',
 		enum: {
-			values: ['user', 'admin'],
-			message: 'Role must be user or admin',
+			values: ['user', 'admin', 'super_admin'],
+			message: 'Role must be user, admin or super_admin',
 		},
 	},
 	passwordResetToken: {
