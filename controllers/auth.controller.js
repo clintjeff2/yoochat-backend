@@ -76,19 +76,33 @@ exports.logIn = catchAsync(async (req, res, next) => {
 exports.protect = catchAsync(async (req, res, next) => {
 	//Get token
 	const { headers } = req;
-	const token = headers.authorization.split(' ')[1];
+	const token = headers.authorization?.split(' ')[1] || '';
+
+	if (!token)
+		return next(
+			new ErrorApi('You are not logged in, please login to gain access', 401)
+		);
 
 	//Check for validity of token
 	const tokenInfo = await verifyToken(token);
 
-	console.log(tokenInfo);
+	// console.log(tokenInfo);
 	const user = await User.findById(tokenInfo._id);
 
-	if(user)
-		req.user = user;
+	if (user) req.user = user;
 
 	next();
 });
+
+exports.restrictTo = (...roles) => {
+	return (req, res, next) => {
+		if (!roles.includes(req.user.role))
+			return next(
+				new ErrorApi('You are not permitted to carry out this action', 403)
+			);
+		next();
+	};
+};
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
 	//Get email
