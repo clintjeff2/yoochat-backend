@@ -16,7 +16,7 @@ mongoose
 	});
 
 app.listen(process.env.PORT, () => {
-	console.log('Connected to port 8000');
+	console.log('Connected to port 8001');
 });
 
 //implement unhandled exceptions

@@ -3,7 +3,9 @@ const morgan = require('morgan');
 const errorController = require('./controllers/error.controller');
 const ErrorApi = require('./utilities/ErrorApi');
 const userRouter = require('./routes/users.routes');
-const userContactController = require('./routes/user.contact.routes');
+const userContactRouter = require('./routes/user.contact.routes');
+const groupRouter = require('./routes/groups.routes');
+const groupContactRouter = require('./routes/group.contact.routes');
 
 const app = express();
 
@@ -14,7 +16,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 app.use('/api/v1/user', userRouter);
-app.use('/api/v1/user-contact', userContactController)
+app.use('/api/v1/user-contact', userContactRouter);
+app.use('/api/v1/group', groupRouter);
+app.use('/api/v1/group-contact', groupContactRouter);
 
 app.all('*', (req, res, next) => {
 	console.log('Issues');

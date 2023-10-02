@@ -8,16 +8,12 @@ const sendResponse = require('./../utilities/sendResponse');
 const User = require('./../models/user.model');
 
 exports.signUp = catchAsync(async (req, res, next) => {
-	const { username, email, password, confirmPassword, photo } = req.body;
+	const { username, email, password, confirmPassword, photo, role } = req.body;
 
+	let userData = { username, email, password, confirmPassword, photo };
+	if (role) userData = { ...userData, role };
 	//create user
-	const user = await User.create({
-		username,
-		email,
-		password,
-		confirmPassword,
-		photo,
-	});
+	const user = await User.create(userData);
 
 	//create token
 	const token = await createToken(user._id);

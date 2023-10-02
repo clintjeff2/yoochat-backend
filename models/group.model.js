@@ -6,11 +6,24 @@ const groupSchema = new mongoose.Schema({
 		minlength: [4, 'Group name should be a minimum of 4 characters'],
 		required: [true, 'A group must have a name'],
 	},
-	admin: {
+	creator: {
 		type: mongoose.Types.ObjectId,
 		ref: 'User',
 		required: [true, 'A group must be created by a user'],
 	},
+	users: [
+		{
+			type: mongoose.Types.ObjectId,
+			ref: 'User',
+			required: [true, 'A group must have users'],
+		},
+	],
+	admins: [
+		{
+			type: mongoose.Types.ObjectId,
+			ref: 'User',
+		},
+	],
 	photo: String,
 	description: String,
 });

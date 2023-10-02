@@ -21,5 +21,7 @@ const groupContactSchema = new mongoose.Schema({
 	],
 });
 
+//Select a user and all his groups
+
 const GroupContacts = mongoose.model('Group_Contact', groupContactSchema);
 module.exports = GroupContacts;
