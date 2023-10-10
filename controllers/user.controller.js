@@ -5,3 +5,13 @@ exports.getAllUsers = (req, res, next) => {
 		message: 'Found user',
 	});
 };
+
+//Get all users
+
+//update user without picture
+
+//update picture
+
+//Delete user
+
+//Get specific user
