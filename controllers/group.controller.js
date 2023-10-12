@@ -91,7 +91,7 @@ exports.createGroup = catchAsync(async (req, res, next) => {
 	if (description) data.description = description;
 
 	//Check if users have been choosen while creating the group
-	if (users.length)
+	if (!users?.length)
 		return next(
 			new ErrorApi('You must add atleast a user while creating the group', 400)
 		);
@@ -145,7 +145,7 @@ const multerStorage = multer.diskStorage({
 	destination: (req, file, callback) => {
 		const createDirDest = async () => {
 			const { groupID } = req.params;
-			const dirName = `uploads/${groupID}/profile`;
+			const dirName = `uploads/Yoochat Groups/${groupID}/profile`;
 
 			await fs.mkdir(dirName, { recursive: true }, (err) => {
 				if (err) console.log(err, 'ERROR IN FILE UPLOAD DESTINATION SECTION');
@@ -173,7 +173,12 @@ const multerStorage = multer.diskStorage({
 const multerFilter = (req, file, callback) => {
 	const fileType = file.mimetype.split('/')[0];
 	if (fileType !== 'image')
-		return callback(new ErrorApi('file format not support', 400));
+		return callback(
+			new ErrorApi(
+				'The upload document is not an image, try with an image',
+				400
+			)
+		);
 
 	callback(null, true);
 };
@@ -471,4 +476,3 @@ exports.RemoveAdminTitle = catchAsync(async (req, res, next) => {
 //prevent adding element in an array if element already exit.
 //prevent adding elements in an array to elements in another array.
 
-//Update group profile

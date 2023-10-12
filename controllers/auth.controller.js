@@ -158,3 +158,11 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 	};
 	sendResponse(res, 'Success', 200, data);
 });
+
+exports.logout = catchAsync(async (req, res, next) => {
+	//do later with cookies
+
+	sendResponse(res, 'success', 200, [
+		{ token: '', message: 'Succesfully logged out' },
+	]);
+});

@@ -61,6 +61,11 @@ const userSchema = new mongoose.Schema({
 	},
 });
 
+//pre query middleware to hide active:false users
+// userSchema.pre(/^find/, async function (next) {
+// 	this.select({})
+// })
+
 //pre document middleware to encrypt password
 userSchema.pre('save', async function (next) {
 	if (this.isModified('password') || this.isNew) {
