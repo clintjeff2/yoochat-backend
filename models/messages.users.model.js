@@ -10,7 +10,7 @@ const messageSchema = new mongoose.Schema({
 	receiver: {
 		type: mongoose.Types.ObjectId,
 		ref: 'User',
-		default: null,
+		required: [true, 'A message must be sent to someone'],
 	},
 	message: {
 		type: String,
@@ -28,4 +28,4 @@ const messageSchema = new mongoose.Schema({
 
 const MessageUsers = mongoose.model('Messages_Users', messageSchema);
 
-module.exports = Message;
+module.exports = MessageUsers;

@@ -10,14 +10,7 @@ const messageSchema = new mongoose.Schema({
 	group: {
 		type: mongoose.Types.ObjectId,
 		ref: 'Group',
-		default: null,
-		validate: {
-			validator: function (val) {
-				const legit = val || this.receiver ? true : false;
-        return legit;
-			},
-			message: 'A message must be sent to a group or to a receiving individual',
-		},
+		required: [true, 'A message is sent to a group'],
 	},
 	message: {
 		type: String,
@@ -34,5 +27,4 @@ const messageSchema = new mongoose.Schema({
 });
 
 const MessageGroups = mongoose.model('Messages_Groups', messageSchema);
-
 module.exports = Message;
