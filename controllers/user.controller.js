@@ -61,7 +61,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
 	curUser.password = password;
 	curUser.confirmPassword = confirmPassword;
-	
+
 	const user = await curUser.save();
 	sendResponse(res, 'success', 200, user);
 });
@@ -135,7 +135,7 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
 
 //Get specific user
 exports.getUser = catchAsync(async (req, res, next) => {
-	const id = req.user._id;
+	const id = req.params?.userID || req.user._id;
 
 	const user = await User.findById(id);
 
