@@ -27,4 +27,4 @@ const messageSchema = new mongoose.Schema({
 });
 
 const MessageGroups = mongoose.model('Messages_Groups', messageSchema);
-module.exports = Message;
+module.exports = MessageGroups;
