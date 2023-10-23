@@ -7,6 +7,7 @@ const userContactRouter = require('./routes/user.contact.routes');
 const groupRouter = require('./routes/groups.routes');
 const groupContactRouter = require('./routes/group.contact.routes');
 const messageUserRoute = require('./routes/message.users.routes');
+const messageGroupRoute = require('./routes/message.groups.routes');
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use('/api/v1/user-contact', userContactRouter);
 app.use('/api/v1/group', groupRouter);
 app.use('/api/v1/group-contact', groupContactRouter);
 app.use('/api/v1/message-user', messageUserRoute);
-// app.use('/api/v1/message-group', messageGroupRoute);
+app.use('/api/v1/message-group', messageGroupRoute);
 
 app.all('*', (req, res, next) => {
 	console.log('Issues');
