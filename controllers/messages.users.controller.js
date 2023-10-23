@@ -80,3 +80,4 @@ exports.discardMessage = catchAsync(async (req, res, next) => {
 // exports.broadcastMessage = catchAsync(async (req, res, next) => {
 //   const {users} = req.body;
 // })
+//IMPLEMENT A BROADCAST TO ALL USERS
